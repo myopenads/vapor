@@ -34,7 +34,7 @@ public struct RunningServer {
     /// Stops the currently running server, if one is running.
     public let close: () -> Future<Void>
 
-    init(onClose: Future<Void>, close: () -> Future<Void>) {
+    init(onClose: Future<Void>, close: @escaping () -> Future<Void>) {
         self.onClose = onClose
         self.close = close
     }
